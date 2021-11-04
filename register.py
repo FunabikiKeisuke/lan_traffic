@@ -1,6 +1,5 @@
-import sqlite3 as sqlite3
-import os as os
-import re as re
+import sqlite3
+import re
 
 dbname = '/mnt/hdd/db/device.db'
 
