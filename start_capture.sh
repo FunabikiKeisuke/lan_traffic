@@ -1,0 +1,1 @@
+tshark -i eth0 -a duration:600 -w /mnt/hdd/traffic_data/`date "+%Y%m%d%H%M"`.pcap
