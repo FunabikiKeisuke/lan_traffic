@@ -79,7 +79,7 @@ pi@raspberrypi:~ $ df -h | grep /dev/sda
 ```
 pi@raspberrypi:~ $ sudo apt update
 pi@raspberrypi:~ $ sudo apt upgrade
-pi@raspberrypi:~ $ sudo apt install tshark apache2 php libapache2-mod-php
+pi@raspberrypi:~ $ sudo apt install tshark apache2 php libapache2-mod-php php-sqlite3
 ```
 本リポジトリをクローン．
 ```
