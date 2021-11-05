@@ -22,6 +22,28 @@ Wi-Fiルータは二重ルータを防ぐためにアクセスポイントモー
 Raspberry Piと接続するポートをミラーリングポートとして設定する．
 Wi-Fiルータを接続しているポートなど，トラフィックをキャプチャしたい機器を接続しているポートをポートミラーの対象として設定する．
 
+### Raspberry PiのIPアドレスを固定
+下記にRaspberry Pi OSの例を示す．
+
+`/etc/dhcpcd.conf`に設定を追記．
+```
+pi@raspberrypi:~ $ sudo vi /etc/dhcpcd.conf
+（略）
+interface wlan0
+static ip_address=192.168.0.3/24
+static routers=192.168.0.1
+static domain_name_servers=192.168.0.1
+```
+Raspberry Piを再起動して設定の反映を確認．
+```
+pi@raspberrypi:~ $ reboot
+pi@raspberrypi:~ $ ifconfig
+（略）
+wlan0: flags=4163<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.0.3  netmask 255.255.255.0  broadcast 192.168.0.255
+（略）
+```
+
 ### Raspberry Piに外付けHDDをマウント
 下記にRaspberry Pi OSの例を示す．
 
@@ -102,5 +124,6 @@ LAN内からWebブラウザでRaspberry PiのIPアドレスにアクセス．
 
 
 ## 参考文献
+- https://mugeek.hatenablog.com/entry/2019/05/27/230256
 - https://aokakes.hatenablog.com/entry/2020/05/09/194143
 - https://deviceplus.jp/hobby/how-to-build-web-server-with-raspberry-pi/
