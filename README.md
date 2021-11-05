@@ -111,7 +111,7 @@ pi@raspberrypi:~ $ sudo crontab -e
 `.html`ファイルをバックアップし，`.php`ファイルをコピー．
 ```
 pi@raspberrypi:~ $ sudo mv /var/www/html/index.html /var/www/html/index.bak
-pi@raspberrypi:~ $ sudo cp /home/pi/lan_traffic/index.php /var/www/html/index.php
+pi@raspberrypi:~ $ sudo cp /home/pi/lan_traffic/*.php /var/www/html/
 ```
 `.css`ファイルをダウンロードし，展開．
 ```

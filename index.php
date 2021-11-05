@@ -1,15 +1,5 @@
 <?php
-$device_color = [
-    'デスクトップPC' => '0, 0, 119',
-    'ノートPC' => '51, 153, 34',
-    'Zenfone5' => '228, 4, 28',
-    'SH-M09' => '0, 221, 221',
-    'Alexa' => '68, 136, 153',
-    'PS4' => '221, 0, 136',
-    'RasberryPi4' => '34, 170, 119',
-    'TL-SG108E' => '221, 0, 119'
-];
-
+include 'device_color.php';
 $date_day = date('Ymd');
 $date_month = date('Ym');
 
@@ -122,8 +112,10 @@ $max_unit = "\"" . substr(byte_format($max_upload_byte, 0, true), -2, 2) . "\"";
 $make_datasets = "";
 foreach ($datasets as $key => $value) {
     $zero_check = explode(",", $value['download']);
-    if (count($zero_check) - 1 === array_count_values($zero_check)[0]) {
-        continue;
+    if (array_count_values($zero_check)) {
+        if (count($zero_check) - 1 === array_count_values($zero_check)[0]) {
+            continue;
+        }
     }
 
 
